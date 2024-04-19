@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>配对数组元素与照片</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.3, maxmum-scale=1.0, minimum-scale=0.3">
+</head>
+<body>
+    <div id="menu-container"></div>
+    <button id="random-button">随机点餐</button>
+    <section hidden>
+      <img id = 1 src="1.png">
+    </section>
+</body>
+<style>
+    #menu-container {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.menu-item {
+  margin-bottom: 20px;
+}
+
+.menu-item img {
+  width: 100px;
+  height: 100px;
+}
+
+.menu-item h3 {
+  margin: 5px 0;
+}
+
+.menu-item p {
+  margin: 0;
+}
+</style>
+<script>
+    var menuContainer = document.getElementById("menu-container");
+    var randomButton = document.getElementById("random-button");
+
+    var menuData = [
+     {
+       name: "汉堡",
+       description: "宝宝请吃:中国汉堡 塔斯汀",
+       image:"1.png"
+    },
+    {
+       name: "蟹黄拌饭",
+       description: "宝宝请吃:蟹黄拌饭",
+       image: "2.png"
+    },
+    {
+       name: "小份菜",
+       description: "宝宝请吃:小份菜",
+       image: "3.png"
+    },
+    {
+       name: "披萨",
+       description: "宝宝请吃:披萨",
+       image: "4.png"
+    },
+    {
+       name: "意面",
+       description: "宝宝请吃:意面",
+       image: "4.png"
+    },
+    {
+       name: "焗饭",
+       description: "宝宝请吃:焗饭",
+       image: "4.png"
+    },
+    {
+       name: "炸鸡拌面",
+       description: "宝宝请吃:炸鸡拌面",
+       image: "5.png"
+    },
+    {
+       name: "热狗",
+       description: "宝宝请吃:热狗",
+       image: "6.png"
+    },
+    {
+       name: "鸡肉饭",
+       description: "宝宝请吃:鸡肉饭",
+       image: "7.png"
+    },
+    {
+       name: "炸串",
+       description: "宝宝请吃:炸串",
+       image: "8.png"
+    },
+
+    {
+       name: "饭团",
+       description: "宝宝请吃:饭团",
+       image: "9.png"
+    },
+    {
+       name: "麻辣香锅",
+       description: "宝宝请吃:麻辣香锅",
+       image: "10.png"
+    },
+    {
+       name: "麻辣拌",
+       description: "宝宝请吃:麻辣拌",
+       image: "10.png"
+    },
+    {
+       name: "饺子",
+       description: "宝宝请吃:饺子",
+       image: "13.png"
+    },
+    {
+       name: "鸡公煲",
+       description: "宝宝请吃:鸡公煲",
+       image: "12.png"
+    },
+    {
+       name: "炒饭",
+       description: "宝宝请吃:炒饭",
+       image: "14.png"
+    },
+    {
+       name: "川湘菜",
+       description: "宝宝请吃:川湘菜",
+       image: "15.png"
+    },
+    {
+       name: "老盒饭",
+       description: "宝宝请吃:老盒饭",
+       image: "16.png"
+    },
+    {
+       name: "盖码饭",
+       description: "宝宝请吃:盖码饭",
+       image: "17.png"
+    },
+    {
+       name: "鱿鱼炒饭",
+       description: "宝宝请吃:鱿鱼炒饭",
+       image: "18.png"
+    }, 
+];
+
+randomButton.addEventListener("click", function() {
+  var randomIndex = Math.floor(Math.random() * menuData.length);
+  var randomItem = menuData[randomIndex];
+
+  var menuItem = document.createElement("div");
+  menuItem.classList.add("menu-item");
+
+  var image = document.createElement("img");
+  image.src = randomItem.image;
+
+  var name = document.createElement("h3");
+  name.textContent = randomItem.name;
+
+  var description = document.createElement("p");
+  description.textContent = randomItem.description;
+
+  menuItem.appendChild(image);
+  menuItem.appendChild(name);
+  menuItem.appendChild(description);
+
+  menuContainer.innerHTML = "";
+  menuContainer.appendChild(menuItem);
+});
+</script>
+</html>
